@@ -1,187 +1,73 @@
-# Movie Booking Service - Resful Api
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-## Environment
-- Node V18.16.0
-- NestJS
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## API Document
-### Front End
-#### User Login
-1. Sign up: `Post` -> `/api/user/signup`
-   ```json
-   # Post body
-   {
-    "email": "string",
-    "password": "string",
-    "checkPassword": "string"
-   }
-   # Response - success
-   {
-    "status": "success",
-    "data": {
-        "email": "string",
-        "jwt": "string"
-    }
-   }
-   ```
-2. Login: `Post` -> `/api/user/login`
-   ```json
-   # Post body
-   {
-    "email": "string",
-    "password": "string",
-   }
-   # Response - success
-   {
-    "status": "success",
-    "data": {
-        "email": "string",
-        "jwt": "string"
-    }
-   }
-   ```
-3. Forget Password: `Post` -> `/api/user/password/forget`
-   ```json
-   # Post body
-   {
-    "email": "string"
-   }
-   # Response - success
-   {
-    "status": "success",
-    "data": {
-        "email": "string"
-    }
-   }
-   ```
-#### Home
-4. home info: `Get` -> `/api/home`
-   - Current Movies
-   - ComingSoon Movies
-   - Activities
-   ```json
-   # Response - success
-   ```
-#### Movies
-5. Movie List: `Get`  -> `/api/movies`
-   ```json
-   # Response - success
-   ```
-#### Activities
-6. Activities List: `Get` -> `/api/activities`
-   ```json
-   # Response - success
-   ```
-#### Theaters
-7. Theater List: `Get` -> `/api/theaters`
-   ```json
-   # Response - success
-   ```
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-#### User
-8. User info: `Get` -> `/api/user/infos`
-   - Personal info
-   - consumption record
-   - Point
-   ```json
-   # Response - success
-   ```
-9.  Save edit user info: `Patch` -> `/api/user/infos`
-    ```json
-    # Response - success
-    ```
-10. Save Edit password: `Patch` -> `/api/user/password`
-    ```json
-    # Response - success
-    ```
+## Description
 
-#### Ticket
-11.  Movie info: `Get` -> `/api/ticket/movie/:movieId`
-    - movie introduction
-    - movie sessions
-    ```json
-    # Response - success
-    ```
-12.  Session info: `Get` -> `/api/ticket/session/:sessionId`
-    - movie info
-    - sessions time in every area
-    ```json
-    # Response - success
-    ```
-13.  Seats info in specific session: `Get` -> `/api/ticket/session/:sessionId/seats`
-    ```json
-    # Response - success
-    ```
-14.  Check Seats avaliable `Post` -> `/api/ticket/session/:sessionId/seats`
-    ```json
-    # Response - success
-    ```
-15. Save Counsumption record `Post` -> `/api/user/consumption`
-    ```json
-    # Response - success
-    ```
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-- All response fail
-```json
-# Response - Fail
-{
-    status: "fail",
-    message: "error message"
-}
+## Installation
+
+```bash
+$ npm install
 ```
 
+## Running the app
 
-### Management System
-#### admin
-1. login
-2. users list
-3. add user
-4. save edit user
-#### theater CRUD
-5. theaters list
-6. add theater
-7. edit theater
-8. close theater
+```bash
+# development
+$ npm run start
 
-#### activities CRUD
-9. activities list
-10. add activity
-11. edit activity
-12. remove activity
+# watch mode
+$ npm run start:dev
 
-#### movie CRUD
-13. movies list
-14. add movie
-15. edit movie - 要考慮臨時下檔影響場次的問題
-
-#### room CRUD
-16. romms list in theater
-17. add room
-18. edit room
-19. close room
-
-#### seats Sample CRUD
-20. seats list
-21. add seats
-22. edit seats
-23. close seats
-
-#### ticket Sample CRUD
-24. tickets list
-25. add tickets
-26. edit ticket
-27. close ticket
-
-#### session CRUD
-25. add session
-26. edit session
-
-
-- All response fail
-```json
-# Response - Fail
-{
-    status: "fail",
-    message: "error message"
-}
+# production mode
+$ npm run start:prod
 ```
+
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).

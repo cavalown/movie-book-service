@@ -1,8 +1,49 @@
-# Movie Booking Service - Resful Api
+<p align="center">
+  <img src="../movie-book-service/assets/logo.png" width="200" alt="Nest Logo" />
+</p>
 
-## Environment
+# Movie Booking Service - Resful Api
+## Environment Description
 - Node V18.16.0
-- NestJS
+- [Nest framework TypeScript starter repository.](https://github.com/nestjs/nest) 
+
+## Installation
+
+```bash
+$ npm install
+```
+
+## Running the app
+
+```bash
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
+## Add New Module
+```bash
+nest new <name>
+```
+## Test
+
+```bash
+# unit tests
+$ npm run test
+
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Swagger
+- http://localhost:3000/api
 
 ## API Document
 ### Front End
